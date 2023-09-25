@@ -23,7 +23,7 @@ module PagesHelper
 
   def normalizing_content(text)
     text.gsub!(/\*\[([\wа-яА-я]+)\]\*/) { "<b>#{$1}</b>" }
-    text.gsub!(/\\\\\[([\wа-яА-Я]+)\]\\\\/) { "<i>#{$1}</i>" }
+    text.gsub!(/\\\[([\wа-яА-Я]+)\]\\/) { "<i>#{$1}</i>" }
     text.gsub!(/\(\(([^\]]+) \[([^\]]+)\]\)\)/) { "<a href=#{$1}>#{$2}</a>" }
     text
   end
