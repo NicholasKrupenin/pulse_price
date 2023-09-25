@@ -1,0 +1,18 @@
+= render('shared/errors', resource: @page) if @page.errors.present?
+
+= form_with model: @page, url: page_url, method: verb, data: { turbo:false } do |form|
+
+  .title
+  = form.label :title
+  = form.text_field :title
+
+  .name
+  = form.label :name
+  = form.text_field :name
+
+  .content
+  = form.label :content
+  = form.text_area :content, size: "80x30"
+
+  .submit
+  = form.submit
