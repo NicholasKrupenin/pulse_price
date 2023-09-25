@@ -9,7 +9,7 @@ module PagesHelper
         @tree << link_to(page.name, page.name)
       end
     end
-    @tree.join
+    sanitize @tree.join
   end
 
   def child_tree(hashtree, indent = 0)
